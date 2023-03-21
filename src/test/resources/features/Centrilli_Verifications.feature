@@ -18,4 +18,4 @@ Feature: User work on the Fleet Module
     Then user clicks login button
 
     Scenario: create a Vehicle Fuel Logs
-      When user click a more dropdown toggle in the main menu bar
+      When user clicks a more dropdown toggle in the main menu bar

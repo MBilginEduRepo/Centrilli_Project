@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = "html:target/cucumber-report.html",
         features = "src/test/resources/features",
-        glue="centril/step_definitions",
+        glue="com/centrilli/step_definitions",
         dryRun=false,
         tags = ""
 )
