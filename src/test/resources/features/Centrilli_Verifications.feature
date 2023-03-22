@@ -23,3 +23,4 @@ Feature: User work on the Fleet Module
     And user clicks Vehicles Fuel Logs Module
     And user clicks Create Button
     And user choose Vehicle
+    And user click Save Button

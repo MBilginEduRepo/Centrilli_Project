@@ -65,6 +65,13 @@ public class Verifitions_StepDefinitions {
     public void userChooseVehicle() throws InterruptedException {
         Thread.sleep(5000);
         homePage.VehicleInputDropDown.click();
+        Thread.sleep(5000);
+        homePage.VehicleName.click();
+    }
 
+    @And("user click Save Button")
+    public void userClickSaveButton() throws InterruptedException {
+        Thread.sleep(5000);
+        homePage.SaveButton.click();
     }
 }
