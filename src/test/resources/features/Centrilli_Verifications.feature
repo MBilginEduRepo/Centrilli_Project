@@ -37,3 +37,9 @@ Feature: User work on the Fleet Module
     And user clicks to Discard button
     Then user makes sure his Fuel Logs is discarded by landing on the Vehicles Fuel Logs page
 
+  Scenario: Verify that page title is changed to the new Vehicle Fuel Logs value after user create the Vehicle Fuel Logs
+    When user clicks Create Button
+    And user choose Vehicle
+    And user click Save Button
+    And page title changes to the new Vehicle Fuel Logs value
+
