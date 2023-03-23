@@ -26,8 +26,6 @@ public class CentrilliHomePage {
     @FindBy(xpath = "//input[@id='o_field_input_297']")
     public WebElement VehicleInputDropDown;
 
-    @FindBy(xpath = "//li[.='Audi/A1/']")
-    public WebElement VehicleName;
 
     @FindBy(xpath = "//button[@class='btn btn-primary btn-sm o_form_button_save']")
     public WebElement SaveButton;

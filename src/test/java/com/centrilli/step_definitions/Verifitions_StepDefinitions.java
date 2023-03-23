@@ -9,6 +9,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.ISelect;
 import org.openqa.selenium.support.ui.Select;
 
@@ -37,7 +39,7 @@ public class Verifitions_StepDefinitions {
 
     @When("user clicks More Button")
     public void userClicks() throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         homePage.MoreButton.click();
 
     }
@@ -45,33 +47,44 @@ public class Verifitions_StepDefinitions {
 
     @And("user clicks Fleet Module")
     public void userClicksFleet() throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         homePage.FleetModule.click();
     }
 
     @And("user clicks Vehicles Fuel Logs Module")
     public void userClicksVehiclesFuelLogsModule() throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         homePage.VehiclesFuelLogsModule.click();
     }
 
     @And("user clicks Create Button")
     public void userClicksCreateButton() throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         homePage.CreateButton.click();
     }
 
     @And("user choose Vehicle")
     public void userChooseVehicle() throws InterruptedException {
-        Thread.sleep(5000);
-        homePage.VehicleInputDropDown.click();
-        Thread.sleep(5000);
-        homePage.VehicleName.click();
+       homePage.VehicleInputDropDown.click();
+        Thread.sleep(3000);
+        homePage.VehicleInputDropDown.sendKeys(Keys.ENTER);
+        Thread.sleep(3000);
     }
 
     @And("user click Save Button")
     public void userClickSaveButton() throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         homePage.SaveButton.click();
+    }
+
+    @And("page title changes to the new Vehicle Fuel Logs value")
+    public void pageTitleChangesToTheNewVehicleFuelLogsValue() {
+        String selectedVehicle = homePage.VehicleInputDropDown.getText();
+        System.out.println("selectedVehicle = " + selectedVehicle);
+        String actualTitle = Driver.getDriver().getTitle();
+        System.out.println("actualTitle = " + actualTitle);
+
+        Assert.assertTrue(actualTitle.contains(selectedVehicle));
+
     }
 }

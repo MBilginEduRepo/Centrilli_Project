@@ -12,15 +12,17 @@ Feature: User work on the Fleet Module
 
     US 27 - Fleet / Vehicles / Vehicles Fuel Logs Function
     Accounts are:POSMANAGER
-  Background:
+  Background: User is on Vehicle Fuel Logs module.
     Given user is on the login page
     When user types valid credentials
-    Then user clicks login button
+    And user clicks login button
+    And user clicks More Button
+    And user clicks Fleet Module
+    Then user clicks Vehicles Fuel Logs Module
 
   Scenario: create a Vehicle Fuel Logs
-    When user clicks More Button
-    And user clicks Fleet Module
-    And user clicks Vehicles Fuel Logs Module
     And user clicks Create Button
     And user choose Vehicle
     And user click Save Button
+    And page title changes to the new Vehicle Fuel Logs value
+
