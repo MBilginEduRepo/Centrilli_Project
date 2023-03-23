@@ -26,10 +26,14 @@ Feature: User work on the Fleet Module
     And user click Save Button
     And page title changes to the new Vehicle Fuel Logs value
 
-    @wip
   Scenario: Verify that user cannot create a Vehicle Contract without selecting vehicle
     When user clicks Create Button
     And user clicks to Save button
     And user receives a warning popup message, means that he is unable to create a vehicle.
     Then user makes sure his Fuel Logs is NOT created by verifying page title stayed the same:
+  @wip
+  Scenario: Verify that user can cancel creating by clicking Discard button
+    When user clicks Create Button
+    And user clicks to Discard button
+    Then user makes sure his Fuel Logs is discarded by landing on the Vehicles Fuel Logs page
 

@@ -114,4 +114,21 @@ public class Verifitions_StepDefinitions {
         Assert.assertEquals(expectedTitle,actualTitle);
 
     }
+
+    @And("user clicks to Discard button")
+    public void userClicksToDiscardButton() throws InterruptedException {
+        Thread.sleep(1000);
+        homePage.discardButton.click();
+        Thread.sleep(1000);
+    }
+
+    @Then("user makes sure his Fuel Logs is discarded by landing on the Vehicles Fuel Logs page")
+    public void userMakesSureHisFuelLogsIsDiscardedByLandingOnTheVehiclesFuelLogsPage() throws InterruptedException {
+        String expectedTitle="Vehicles Fuel Logs - Odoo";
+        System.out.println("expectedTitle = " + expectedTitle);
+        String actualTitle = Driver.getDriver().getTitle();
+        Thread.sleep(5000);
+        System.out.println("actualTitle = " + actualTitle);
+        Assert.assertEquals(expectedTitle,actualTitle);
+    }
 }

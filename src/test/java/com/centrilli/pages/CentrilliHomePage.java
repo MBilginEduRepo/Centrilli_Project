@@ -33,4 +33,7 @@ public class CentrilliHomePage {
     @FindBy(xpath = "//*[@class=\"o_notification undefined o_error\"]")
     public WebElement popUpMessage;
 
+    @FindBy(xpath = "//*[@accesskey=\"j\"]")
+    public WebElement discardButton;
+
 }
