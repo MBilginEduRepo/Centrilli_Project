@@ -30,4 +30,7 @@ public class CentrilliHomePage {
     @FindBy(xpath = "//button[@class='btn btn-primary btn-sm o_form_button_save']")
     public WebElement SaveButton;
 
+    @FindBy(xpath = "//*[@class=\"o_notification undefined o_error\"]")
+    public WebElement popUpMessage;
+
 }

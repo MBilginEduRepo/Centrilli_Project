@@ -90,4 +90,28 @@ public class Verifitions_StepDefinitions {
         Assert.assertTrue(actualTitle.contains(selectedVehicle));
 
     }
+
+    @And("user clicks to Save button")
+    public void userClicksToSaveButton() throws InterruptedException {
+        Thread.sleep(3000);
+        homePage.SaveButton.click();
+        Thread.sleep(3000);
+    }
+
+    @And("user receives a warning popup message, means that he is unable to create a vehicle.")
+    public void userReceivesAWarningPopupMessageMeansThatHeIsUnableToCreateAVehicle() throws InterruptedException {
+        homePage.popUpMessage.isDisplayed();
+        Thread.sleep(3000);
+    }
+
+    @Then("user makes sure his Fuel Logs is NOT created by verifying page title stayed the same:")
+    public void userMakesSureHisFuelLogsIsNOTCreatedByVerifyingPageTitleStayedTheSame() throws InterruptedException {
+        String expectedTitle="New - Odoo";
+        String actualTitle=Driver.getDriver().getTitle();
+        Thread.sleep(5000);
+        System.out.println("actualTitle = " + actualTitle);
+
+        Assert.assertEquals(expectedTitle,actualTitle);
+
+    }
 }
