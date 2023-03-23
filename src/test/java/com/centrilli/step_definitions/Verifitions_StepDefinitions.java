@@ -39,7 +39,7 @@ public class Verifitions_StepDefinitions {
 
     @When("user clicks More Button")
     public void userClicks() throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         homePage.MoreButton.click();
 
     }
@@ -47,41 +47,44 @@ public class Verifitions_StepDefinitions {
 
     @And("user clicks Fleet Module")
     public void userClicksFleet() throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         homePage.FleetModule.click();
     }
 
     @And("user clicks Vehicles Fuel Logs Module")
     public void userClicksVehiclesFuelLogsModule() throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         homePage.VehiclesFuelLogsModule.click();
     }
 
     @And("user clicks Create Button")
     public void userClicksCreateButton() throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         homePage.CreateButton.click();
     }
 
     @And("user choose Vehicle")
     public void userChooseVehicle() throws InterruptedException {
        homePage.VehicleInputDropDown.click();
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         homePage.VehicleInputDropDown.sendKeys(Keys.ENTER);
-        Thread.sleep(3000);
+        Thread.sleep(1000);
     }
 
     @And("user click Save Button")
     public void userClickSaveButton() throws InterruptedException {
-        Thread.sleep(3000);
+        Thread.sleep(1000);
         homePage.SaveButton.click();
+        Thread.sleep(5000);
     }
 
     @And("page title changes to the new Vehicle Fuel Logs value")
-    public void pageTitleChangesToTheNewVehicleFuelLogsValue() {
+    public void pageTitleChangesToTheNewVehicleFuelLogsValue() throws InterruptedException {
         String selectedVehicle = homePage.VehicleInputDropDown.getText();
         System.out.println("selectedVehicle = " + selectedVehicle);
+        Thread.sleep(3000);
         String actualTitle = Driver.getDriver().getTitle();
+        Thread.sleep(5000);
         System.out.println("actualTitle = " + actualTitle);
 
         Assert.assertTrue(actualTitle.contains(selectedVehicle));
