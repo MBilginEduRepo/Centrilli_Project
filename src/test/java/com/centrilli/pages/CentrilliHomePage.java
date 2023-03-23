@@ -23,7 +23,7 @@ public class CentrilliHomePage {
     @FindBy(xpath = "//button[@class='btn btn-primary btn-sm o_list_button_add']")
     public WebElement CreateButton;
 
-    @FindBy(xpath = "//input[@id='o_field_input_297']")
+    @FindBy(xpath = "//input[@class=\"o_input ui-autocomplete-input\"]")
     public WebElement VehicleInputDropDown;
 
 
