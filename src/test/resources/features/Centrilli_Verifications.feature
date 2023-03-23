@@ -20,29 +20,39 @@ Feature: User work on the Fleet Module
     And user clicks Fleet Module
     Then user clicks Vehicles Fuel Logs Module
 
-    Scenario: create a Vehicle Fuel Logs
+    Scenario: Verify that user can create a Vehicle Fuel Logs
       When user clicks Create Button
       And user choose Vehicle
       And user click Save Button
       And page title changes to the new Vehicle Fuel Logs value
 
-    Scenario: Verify that user cannot create a Vehicle Contract without selecting vehicle
+    Scenario: Verify that user cannot create a Vehicle Fuel Logs without selecting vehicle
       When user clicks Create Button
       And user clicks to Save button
       And user receives a warning popup message, means that he is unable to create a vehicle.
       Then user makes sure his Fuel Logs is NOT created by verifying page title stayed the same:
 
-    Scenario: Verify that user can cancel creating by clicking Discard button
+    Scenario: Positive scenario:
+              Verify that user can cancel creating by clicking Discard button
       When user clicks Create Button
       And user clicks to Discard button
       Then user makes sure his Fuel Logs is discarded by landing on the Vehicles Fuel Logs page
+      @wip
+    Scenario:Negative scenario 1:
+              Verify that user can cancel creating by clicking Discard button
+      When user clicks Create Button
+      And user choose Vehicle
+      And user clicks to Discard button
+      And user sees this warning message "The record has been modified, your changes will be discarded. Do you want to proceed?"
+      And user clicks Ok button
+      Then user sees the "Vehicles Fuel Logs" page
 
     Scenario: Verify that page title is changed to the new Vehicle Fuel Logs value after user create the Vehicle Fuel Logs
       When user clicks Create Button
       And user choose Vehicle
       And user click Save Button
       And page title changes to the new Vehicle Fuel Logs value
-      @wip
+
     Scenario: Verify that “Attachment” and Action buttons are displayed at the top of the page (after creating a new Vehicle Fuel Logs).
       When user clicks Create Button
       And user choose Vehicle

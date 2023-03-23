@@ -45,4 +45,13 @@ public class CentrilliHomePage {
     @FindBy(xpath = "/html/body/div[1]/div[2]/div[1]/div[2]/div[2]/div/div[3]/button")
     public WebElement actionButton;
 
+    @FindBy(xpath = "/html/body/div[5]/div/div/div[2]")
+    public WebElement warningText;
+
+    @FindBy(xpath = "/html/body/div[5]/div/div/div[3]/button[1]")
+    public WebElement okButton;
+
+    @FindBy(xpath = "//li[.='Vehicles Fuel Logs']")
+    public WebElement moduleVflTitle;
+
 }

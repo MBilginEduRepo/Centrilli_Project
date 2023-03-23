@@ -139,4 +139,32 @@ public class Verifitions_StepDefinitions {
         homePage.actionButton.isDisplayed();
         Thread.sleep(1000);
     }
+
+    @And("user sees this warning message {string}")
+    public void userSeesThisWarningMessage(String expected) throws InterruptedException {
+        System.out.println("expected = " + expected);
+        String actual=(homePage.warningText.getText());
+        Thread.sleep(1000);
+        System.out.println("actual = " + actual);
+
+        Assert.assertEquals(expected,actual);
+    }
+
+    @And("user clicks Ok button")
+    public void userClicksOkButton() throws InterruptedException {
+        homePage.okButton.click();
+        Thread.sleep(1000);
+    }
+
+    @Then("user sees the {string} page")
+    public void userSeesThePage(String expected) throws InterruptedException {
+        System.out.println("expected = " + expected);
+        String actual=homePage.moduleVflTitle.getText();
+        Thread.sleep(1000);
+        System.out.println("actual = " + actual);
+
+        Assert.assertEquals(expected,actual);
+
+
+    }
 }
