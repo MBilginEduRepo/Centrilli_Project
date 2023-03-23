@@ -4,6 +4,9 @@ import com.centrilli.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import javax.xml.xpath.XPath;
+
 public class CentrilliHomePage {
     public CentrilliHomePage() {
 
@@ -35,5 +38,11 @@ public class CentrilliHomePage {
 
     @FindBy(xpath = "//*[@accesskey=\"j\"]")
     public WebElement discardButton;
+
+    @FindBy(xpath = "/html/body/div[1]/div[2]/div[1]/div[2]/div[2]/div/div[2]/button")
+    public WebElement attachmentButton;
+
+    @FindBy(xpath = "/html/body/div[1]/div[2]/div[1]/div[2]/div[2]/div/div[3]/button")
+    public WebElement actionButton;
 
 }

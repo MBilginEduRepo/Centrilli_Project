@@ -131,4 +131,12 @@ public class Verifitions_StepDefinitions {
         System.out.println("actualTitle = " + actualTitle);
         Assert.assertEquals(expectedTitle,actualTitle);
     }
+
+    @Then("“Attachment” and Action buttons are displayed at the top of the page")
+    public void attachmentAndActionButtonsAreDisplayedAtTheTopOfThePage() throws InterruptedException {
+        homePage.attachmentButton.isDisplayed();
+        Thread.sleep(1000);
+        homePage.actionButton.isDisplayed();
+        Thread.sleep(1000);
+    }
 }
