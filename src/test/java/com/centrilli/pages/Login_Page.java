@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CentrilliLoginPage {
+public class Login_Page {
 
-    public CentrilliLoginPage(){
+    public Login_Page(){
 
         PageFactory.initElements(Driver.getDriver(),this);
     }

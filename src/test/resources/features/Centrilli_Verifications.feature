@@ -37,7 +37,7 @@ Feature: User work on the Fleet Module
       When user clicks Create Button
       And user clicks to Discard button
       Then user makes sure his Fuel Logs is discarded by landing on the Vehicles Fuel Logs page
-      @wip
+
     Scenario:Negative scenario 1:
               Verify that user can cancel creating by clicking Discard button
       When user clicks Create Button
@@ -58,4 +58,41 @@ Feature: User work on the Fleet Module
       And user choose Vehicle
       And user clicks to Save button
       Then “Attachment” and Action buttons are displayed at the top of the page
+      @wip
+    Scenario Outline: Verify that user can find the new created Vehicle Fuel Logs value under Vehicle Fuel Logs list by using search box.
+      When user clicks Create Button
+      And user enters vehicle "<Vehicle>"
+      And user enters Odometer Value <Odometer Value>
+      And user enters Liter <Liter>
+      And user enters Price Per Liter <Price Per Liter>
+      And user enters Total Price <Total Price>
+      And user enters Date "<Date>"
+      And user enters Purchaser "<Purchaser>"
+      And user enters Invoice Reference "<Invoice Reference>"
+      And user enters Vendor "<Vendor>"
+      And user enters Notes "<Notes>"
+      And user clicks to Save button
+      And user sees the "<Vehicle>" on the page
+      And user returns to the Vehicle Fuel Logs List by clicking the Vehicles Fuel Logs button
+      And user enters below data in the search box along with filters on the Filters page side.
+      And user adds vehicle "<Vehicle>"
+      And user adds Odometer Value <Odometer Value>
+      And user adds Liter <Liter>
+      And user adds Price Per Liter <Price Per Liter>
+      And user adds Total Price <Total Price>
+      And user adds Date "<Date>"
+      And user adds Purchaser "<Purchaser>"
+      And user adds Invoice Reference "<Invoice Reference>"
+      And user adds Vendor "<Vendor>"
+      And user adds Notes "<Notes>"
+      And user clicks Advanced Search... button
+      Then user sees the "<new created>" Fuel Logs value.
+
+      Examples:
+        | Vehicle  | Odometer Value | Liter | Price Per Liter | Total Price | Date       | Purchaser | Invoice Reference | Vendor | Notes                   |
+        | Audi/A1/ | 2.00           | 200   | 2.00            | 400           | 03/24/2023 | Roksi     | Yavuz Limited     | Yalcin | Thanks you for services |
+
+
+
+
 
