@@ -258,15 +258,28 @@ public class Verifitions_StepDefinitions {
     }
 
     @When("user adds vehicle {string}")
-    public void user_adds_vehicle(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void user_adds_vehicle(String string) throws InterruptedException {
+        vehiclesFuelLogs_page.vehicle_addCustom_Filter.click();
+        vehiclesFuelLogs_page.vehicle_filterDropdown1.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.vehicle_filterDropdown1.sendKeys("Vehicle");
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filters.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filters.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.vehicle_addCustom_Filter.click();
+        vehiclesFuelLogs_page.vehicle_filterInput.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.vehicle_filterInput.sendKeys(string);
+        vehiclesFuelLogs_page.vehicle_Apply.click();
+
+
     }
 
     @When("user adds Odometer Value {double}")
     public void user_adds_odometer_value(Double double1) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
     }
 
     @When("user adds Liter {double}")

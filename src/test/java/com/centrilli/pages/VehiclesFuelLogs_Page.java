@@ -87,5 +87,65 @@ public class VehiclesFuelLogs_Page {
     @FindBy(xpath = "/html/body/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/button")
     public WebElement filters;
 
+    @FindBy(xpath = "/html/body/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/ul/li[1]/a")
+    public WebElement vehicle_addCustom_Filter;
+
+    @FindBy(xpath = "/html/body/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/ul/li[2]/span[2]/select")
+    public WebElement vehicle_filterDropdown1;
+
+    @FindBy(xpath = "/html/body/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/ul/li[2]/span[3]/input")
+    public WebElement vehicle_filterInput;
+
+    @FindBy(xpath = "/html/body/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/ul/li[5]/button[1]")
+    public WebElement vehicle_Apply;
+
+    @FindBy(xpath = "/html/body/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/ul/li[5]/a")
+    public WebElement odometerValue_addCustom_Filter;
+
+    @FindBy(xpath = "/html/body/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/ul/li[6]/span[2]/select")
+    public WebElement odometerValue_filterDropdown1;
+
+    @FindBy(xpath = "/html/body/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/ul/li[6]/span[3]/input")
+    public WebElement odometerValue_filterInput;
+
+
+    @FindBy(xpath = "/html/body/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/ul/li[7]/button[1]")
+    public WebElement odometerValue_Apply;
+
+
+
+
+
+    @FindBy(xpath = "/html/body/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/ul/li[7]/a")
+    public WebElement liter_addCustom_Filter;
+
+    @FindBy(xpath = "/html/body/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/ul/li[8]/span[2]/select")
+    public WebElement liter_filterDropdown1;
+
+    @FindBy(xpath = "/html/body/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/ul/li[8]/span[3]/input")
+    public WebElement liter_filterInput;
+
+
+    @FindBy(xpath = "/html/body/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/ul/li[9]/button[1]")
+    public WebElement liter_Apply;
+
+
+
+    @FindBy(xpath = "/html/body/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/ul/li[9]/a")
+    public WebElement pricePerLiter_addCustom_Filter;
+
+    @FindBy(xpath = "/html/body/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/ul/li[10]/span[2]/select")
+    public WebElement pricePerLiter_filterDropdown1;
+
+    @FindBy(xpath = "/html/body/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/ul/li[10]/span[3]/input")
+    public WebElement pricePerLiter_filterInput;
+
+
+    @FindBy(xpath = "/html/body/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/ul/li[13]/button[1]")
+    public WebElement pricePerLiter_Apply;
+
+
+
+
 
 }
