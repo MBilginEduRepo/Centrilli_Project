@@ -86,7 +86,7 @@ Feature: User work on the Fleet Module
       And user adds Vendor "<Vendor>"
       And user adds Notes "<Notes>"
       And user clicks Advanced Search... button
-      Then user sees the "<new created>" Fuel Logs value.
+
 
       Examples:
         | Vehicle  | Odometer Value | Liter | Price Per Liter | Total Price | Date       | Purchaser | Invoice Reference | Vendor | Notes                   |

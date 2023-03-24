@@ -212,6 +212,8 @@ public class Verifitions_StepDefinitions {
 
     @And("user enters Purchaser {string}")
     public void userEntersPurchaserPurchaser(String string) throws InterruptedException {
+        vehiclesFuelLogs_page.purchaser_Field.clear();
+        Thread.sleep(1000);
         vehiclesFuelLogs_page.purchaser_Field.click();
         Thread.sleep(1000);
         vehiclesFuelLogs_page.purchaser_Field.sendKeys(string);
@@ -259,87 +261,191 @@ public class Verifitions_StepDefinitions {
 
     @When("user adds vehicle {string}")
     public void user_adds_vehicle(String string) throws InterruptedException {
-        vehiclesFuelLogs_page.vehicle_addCustom_Filter.click();
-        vehiclesFuelLogs_page.vehicle_filterDropdown1.click();
+        vehiclesFuelLogs_page.addCustom_Filter.click();
+        vehiclesFuelLogs_page.filter_Dropdown1.click();
         Thread.sleep(1000);
-        vehiclesFuelLogs_page.vehicle_filterDropdown1.sendKeys("Vehicle");
-        Thread.sleep(1000);
-        vehiclesFuelLogs_page.filters.click();
+        vehiclesFuelLogs_page.filter_Dropdown1.sendKeys("Vehicle");
         Thread.sleep(1000);
         vehiclesFuelLogs_page.filters.click();
         Thread.sleep(1000);
-        vehiclesFuelLogs_page.vehicle_addCustom_Filter.click();
-        vehiclesFuelLogs_page.vehicle_filterInput.click();
+        vehiclesFuelLogs_page.addCustom_Filter.click();
         Thread.sleep(1000);
-        vehiclesFuelLogs_page.vehicle_filterInput.sendKeys(string);
-        vehiclesFuelLogs_page.vehicle_Apply.click();
+        vehiclesFuelLogs_page.filter_Input.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Input.sendKeys(string);
+        vehiclesFuelLogs_page.apply.click();
 
 
     }
 
     @When("user adds Odometer Value {double}")
-    public void user_adds_odometer_value(Double double1) {
+    public void user_adds_odometer_value(Double double1) throws InterruptedException {
+        vehiclesFuelLogs_page.addCustom_Filter.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Dropdown1.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Dropdown1.sendKeys("Odometer");
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filters.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.addCustom_Filter.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Input.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Input.sendKeys(double1+"");
+        vehiclesFuelLogs_page.apply.click();
 
     }
 
     @When("user adds Liter {double}")
-    public void user_adds_liter(Double double1) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void user_adds_liter(Double double1) throws InterruptedException {
+        vehiclesFuelLogs_page.addCustom_Filter.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Dropdown1.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Dropdown1.sendKeys("Liter");
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filters.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.addCustom_Filter.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Input.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Input.sendKeys(double1+"");
+        vehiclesFuelLogs_page.apply.click();
     }
 
     @When("user adds Price Per Liter {double}")
-    public void user_adds_price_per_liter(Double double1) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void user_adds_price_per_liter(Double double1) throws InterruptedException {
+        vehiclesFuelLogs_page.addCustom_Filter.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Dropdown1.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Dropdown1.sendKeys("Price Per Liter");
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filters.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.addCustom_Filter.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Input.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Input.sendKeys(double1+"");
+        vehiclesFuelLogs_page.apply.click();
     }
 
     @When("user adds Total Price {double}")
-    public void user_adds_total_price(Double double1) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void user_adds_total_price(Double double1) throws InterruptedException {
+        vehiclesFuelLogs_page.addCustom_Filter.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Dropdown1.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Dropdown1.sendKeys("Total Price");
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filters.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.addCustom_Filter.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Input.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Input.sendKeys(double1+"");
+        vehiclesFuelLogs_page.apply.click();
     }
 
     @When("user adds Date {string}")
-    public void user_adds_date(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void user_adds_date(String string) throws InterruptedException {
+        vehiclesFuelLogs_page.addCustom_Filter.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Dropdown1.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Dropdown1.sendKeys("Date");
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filters.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.addCustom_Filter.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_DateInput.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_DateInput.sendKeys(string);
+        vehiclesFuelLogs_page.apply.click();
     }
 
     @When("user adds Purchaser {string}")
-    public void user_adds_purchaser(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void user_adds_purchaser(String string) throws InterruptedException {
+        vehiclesFuelLogs_page.addCustom_Filter.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Dropdown1.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Dropdown1.sendKeys("Purchaser");
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filters.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.addCustom_Filter.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Input.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Input.sendKeys(string);
+        vehiclesFuelLogs_page.apply.click();
     }
 
     @When("user adds Invoice Reference {string}")
-    public void user_adds_invoice_reference(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void user_adds_invoice_reference(String string) throws InterruptedException {
+        vehiclesFuelLogs_page.addCustom_Filter.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Dropdown1.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Dropdown1.sendKeys("Invoice Reference");
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filters.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.addCustom_Filter.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Input.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Input.sendKeys(string);
+        vehiclesFuelLogs_page.apply.click();
     }
 
     @When("user adds Vendor {string}")
-    public void user_adds_vendor(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void user_adds_vendor(String string) throws InterruptedException {
+        vehiclesFuelLogs_page.addCustom_Filter.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Dropdown1.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Dropdown1.sendKeys("Vendor");
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filters.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.addCustom_Filter.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Input.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Input.sendKeys(string);
+        vehiclesFuelLogs_page.apply.click();
     }
 
     @When("user adds Notes {string}")
-    public void user_adds_notes(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void user_adds_notes(String string) throws InterruptedException {
+        vehiclesFuelLogs_page.addCustom_Filter.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Dropdown1.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Dropdown1.sendKeys("Notes");
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filters.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.addCustom_Filter.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Input.click();
+        Thread.sleep(1000);
+        vehiclesFuelLogs_page.filter_Input.sendKeys(string);
+        vehiclesFuelLogs_page.apply.click();
+
     }
 
     @When("user clicks Advanced Search... button")
     public void user_clicks_advanced_search_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        vehiclesFuelLogs_page.advanced_Search.click();
     }
 
-    @Then("user sees the {string} Fuel Logs value.")
-    public void user_sees_the_fuel_logs_value(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
 
 }
