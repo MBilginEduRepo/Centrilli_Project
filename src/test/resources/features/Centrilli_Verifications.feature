@@ -60,7 +60,7 @@ Feature: User work on the Fleet Module
       And user choose Vehicle
       And user clicks Save Button
       Then “Attachment” and Action buttons are displayed at the top of the page
-  @wip
+
     Scenario Outline: Verify that user can find the new created Vehicle Fuel Logs value under Vehicle Fuel Logs list by using search box.
       When user clicks Create Button
       And user enters vehicle "<Vehicle>"
@@ -102,7 +102,10 @@ Feature: User work on the Fleet Module
       And user sees changed Fuel Logs display to Kanban
       And users clicks Graph buttons
       Then user sees changed Fuel Logs display to Graph
-
+  @wip
+    Scenario: Verify that user can change Vehicle Fuel Logs page number by right and left arrow, up right corner of screen.
+      When user clicks right arrow and sees the page number of the page has changed
+      And user clicks left arrow and sees the page number of the page has changed
 
 
 

@@ -123,6 +123,15 @@ public class VehiclesFuelLogs_Page {
     @FindBy(xpath = "//button[@aria-label='graph']")
     public WebElement graph;
 
+    @FindBy(xpath = "//td[@class='o_list_number o_group_pager']//button[@aria-label='Previous']")
+    public WebElement leftArrow_Button;
+
+    @FindBy(xpath = "//td[@class='o_list_number o_group_pager']//button[@aria-label='Next']")
+    public WebElement rightArrow_Button;
+
+    @FindBy(xpath = "/html/body/div[1]/div[2]/div[2]/div/div/div/table/tbody[1]/tr/td[8]/div/span[1]/span[1]")
+    public WebElement page_Counter;
+
 
 
 

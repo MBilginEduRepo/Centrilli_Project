@@ -629,4 +629,34 @@ public class Verifications_StepDefinitions {
         assertEquals(expected,actual);
     }
 
+    @When("user clicks right arrow and sees the page number of the page has changed")
+    public void userClicksRightArrow() {
+        wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
+        vehiclesFuelLogs_page.newCreatedVehicle_Line.click();
+        wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
+        String previous_pageCounterValue=vehiclesFuelLogs_page.page_Counter.getText();
+        vehiclesFuelLogs_page.rightArrow_Button.click();
+        wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
+        String next_pageCounterValue=vehiclesFuelLogs_page.page_Counter.getText();
+
+        Assert.assertNotEquals(previous_pageCounterValue,next_pageCounterValue);
+
+
+
+
+    }
+
+
+
+    @And("user clicks left arrow and sees the page number of the page has changed")
+    public void userClicksLeftArrow() {
+        wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
+        String previous_pageCounterValue=vehiclesFuelLogs_page.page_Counter.getText();
+        vehiclesFuelLogs_page.leftArrow_Button.click();
+        wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
+        String next_pageCounterValue=vehiclesFuelLogs_page.page_Counter.getText();
+
+        Assert.assertNotEquals(previous_pageCounterValue,next_pageCounterValue);
+
+    }
 }
