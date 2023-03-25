@@ -62,7 +62,7 @@ Feature: User work on the Fleet Module
     Scenario Outline: Verify that user can find the new created Vehicle Fuel Logs value under Vehicle Fuel Logs list by using search box.
       When user clicks Create Button
       And user enters vehicle "<Vehicle>"
-      And user enters Odometer Value <Odometer Value>
+      #And user enters Odometer Value <Odometer Value>
       And user enters Liter <Liter>
       And user enters Price Per Liter <Price Per Liter>
       And user enters Total Price <Total Price>
@@ -76,7 +76,7 @@ Feature: User work on the Fleet Module
       And user returns to the Vehicle Fuel Logs List by clicking the Vehicles Fuel Logs button
       And user enters below data in the search box along with filters on the Filters page side.
       And user adds vehicle "<Vehicle>"
-      And user adds Odometer Value <Odometer Value>
+      #And user adds Odometer Value <Odometer Value>
       And user adds Liter <Liter>
       And user adds Price Per Liter <Price Per Liter>
       And user adds Total Price <Total Price>
@@ -86,12 +86,20 @@ Feature: User work on the Fleet Module
       And user adds Vendor "<Vendor>"
       And user adds Notes "<Notes>"
       And user clicks Advanced Search... button
-
+      Then user sees the "<new created>" Fuel Logs value.
 
       Examples:
-        | Vehicle  | Odometer Value | Liter | Price Per Liter | Total Price | Date       | Purchaser | Invoice Reference | Vendor | Notes                   |
-        | Audi/A1/ | 2.00           | 200   | 2.00            | 400           | 03/24/2023 | Roksi     | Yavuz Limited     | Yalcin | Thanks you for services |
+        | Vehicle  | Odometer Value | Liter | Price Per Liter | Total Price | Date       | Purchaser | Invoice Reference | Vendor | Notes                   | new created |
+        | Audi/A1/ | 2.00           | 200   | 2.0             | 400         | 03/24/2023 | Roksi     | Yavuz Limited     | Yalcin | Thanks you for services | Audi/A1/    |
 
+
+  Scenario: Verify that user can change Vehicle Fuel Logs page display to Kanban / List / Graph
+    When users clicks List buttons
+    And user sees changed Fuel Logs display to List
+    And users clicks Kanban buttons
+    And user sees changed Fuel Logs display to Kanban
+    And users clicks Graph buttons
+    Then user sees changed Fuel Logs display to Graph
 
 
 

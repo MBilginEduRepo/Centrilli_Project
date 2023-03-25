@@ -99,11 +99,23 @@ public class VehiclesFuelLogs_Page {
     @FindBy(xpath = "//input[@class='o_input']")
     public WebElement filter_Input;
 
-    @FindBy(xpath = "//input[@class='o_input']")
+    @FindBy(xpath = "//input[@class='o_datepicker_input o_input']")
     public WebElement filter_DateInput;
 
     @FindBy(xpath = "//button[@class='btn btn-primary btn-sm o_apply_filter']")
     public WebElement apply;
+
+    @FindBy(xpath = "//tbody/tr[1]/td[4]")
+    public  WebElement newCreatedVehicle_Name;
+
+    @FindBy(xpath = "//button[@aria-label='list']")
+    public WebElement list;
+
+    @FindBy(xpath = "//button[@aria-label='kanban']")
+    public WebElement kanban;
+
+    @FindBy(xpath = "//button[@aria-label='graph']")
+    public WebElement graph;
 
 
 
