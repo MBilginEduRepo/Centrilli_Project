@@ -21,6 +21,9 @@ public class VehiclesFuelLogs_Page {
     @FindBy(xpath= "//a[@data-action-id='164']")
     public WebElement vehiclesFuelLogs_Module;
 
+    @FindBy(xpath = "//div[@class='o_loading']")
+    public WebElement loading_Bar;
+
     @FindBy(xpath = "//button[@class='btn btn-primary btn-sm o_list_button_add']")
     public WebElement create_Button;
 
@@ -105,8 +108,11 @@ public class VehiclesFuelLogs_Page {
     @FindBy(xpath = "//button[@class='btn btn-primary btn-sm o_apply_filter']")
     public WebElement apply;
 
-    @FindBy(xpath = "//tbody/tr[1]/td[4]")
+    @FindBy(xpath = "//tbody/tr[2]/td[4]")
     public  WebElement newCreatedVehicle_Name;
+
+    @FindBy(xpath = "//th[@class='o_group_name']")
+    public WebElement newCreatedVehicle_Line;
 
     @FindBy(xpath = "//button[@aria-label='list']")
     public WebElement list;
