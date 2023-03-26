@@ -25,6 +25,10 @@ public class Verifications_StepDefinitions {
 
     Login_Page login_page = new Login_Page();
     VehiclesFuelLogs_Page vehiclesFuelLogs_page =new VehiclesFuelLogs_Page();
+
+    int totalNumber;
+
+    String name;
     WebDriverWait wait=new WebDriverWait(Driver.getDriver(),15);
     Faker faker=new Faker();
 
@@ -658,5 +662,25 @@ public class Verifications_StepDefinitions {
 
         Assert.assertNotEquals(previous_pageCounterValue,next_pageCounterValue);
 
+    }
+
+    @When("I count the number of Vehicle Fuel logs")
+    public void iCountTheNumberOfVehicleFuelLogs() {
+        wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
+        vehiclesFuelLogs_page.newCreatedVehicle_Line.click();
+        wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
+        totalNumber = Integer.parseInt(vehiclesFuelLogs_page.totalNumberOf_vehiclesFuelLogs.getText());
+        System.out.println("totalNumber = " + totalNumber);
+    }
+
+
+    @Then("the number of Vehicle Fuel logs should increase by {int}")
+    public void theNumberOfVehicleFuelLogsShouldIncreaseBy(Integer int1) {
+        wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
+        vehiclesFuelLogs_page.vehiclesFuelLogs_Module.click();
+        wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
+        vehiclesFuelLogs_page.newCreatedVehicle_Line.click();
+        wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
+        Assert.assertTrue(totalNumber == Integer.parseInt(vehiclesFuelLogs_page.totalNumberOf_vehiclesFuelLogs.getText()) - int1);
     }
 }

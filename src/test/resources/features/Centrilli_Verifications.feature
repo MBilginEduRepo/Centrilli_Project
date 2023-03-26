@@ -102,10 +102,17 @@ Feature: User work on the Fleet Module
       And user sees changed Fuel Logs display to Kanban
       And users clicks Graph buttons
       Then user sees changed Fuel Logs display to Graph
-  @wip
+
     Scenario: Verify that user can change Vehicle Fuel Logs page number by right and left arrow, up right corner of screen.
       When user clicks right arrow and sees the page number of the page has changed
       And user clicks left arrow and sees the page number of the page has changed
+  @wip
+  Scenario: Verify that the number of Vehicle Fuel logs increased 1
+    When I count the number of Vehicle Fuel logs
+    And user clicks Create Button
+    And user choose Vehicle
+    And user clicks Save Button
+    Then the number of Vehicle Fuel logs should increase by 1
 
 
 

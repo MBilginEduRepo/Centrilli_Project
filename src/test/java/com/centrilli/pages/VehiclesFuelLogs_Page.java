@@ -27,7 +27,7 @@ public class VehiclesFuelLogs_Page {
     @FindBy(xpath = "//button[@class='btn btn-primary btn-sm o_list_button_add']")
     public WebElement create_Button;
 
-    @FindBy(xpath = "//*[@id=\"o_field_input_297\"]")
+    @FindBy(xpath = "/html/body/div[1]/div[2]/div[2]/div/div/div/div/div/div[1]/table[1]/tbody/tr[2]/td[2]/div/div/input")
     public WebElement vehicle_Field;
 
     @FindBy(xpath = "//li[.='Audi/A1/']")
@@ -131,6 +131,9 @@ public class VehiclesFuelLogs_Page {
 
     @FindBy(xpath = "/html/body/div[1]/div[2]/div[2]/div/div/div/table/tbody[1]/tr/td[8]/div/span[1]/span[1]")
     public WebElement page_Counter;
+
+    @FindBy(xpath = "/html/body/div[1]/div[2]/div[2]/div/div/div/table/tbody[1]/tr/td[8]/div/span[1]/span[2]")
+    public WebElement totalNumberOf_vehiclesFuelLogs;
 
 
 
