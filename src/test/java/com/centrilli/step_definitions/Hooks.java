@@ -49,9 +49,9 @@ public class Hooks {
         //System.out.println("====Scenario ended/Take screenshot if failed!");
     }
 
-    @BeforeStep
+    @BeforeStep(value = "@x")
     public void setUpStep()  {
-        wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
+        //wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         //System.out.println("----->applying setup using @BeforeStep");
     }
 
