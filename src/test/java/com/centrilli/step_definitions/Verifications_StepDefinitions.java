@@ -46,8 +46,8 @@ public class Verifications_StepDefinitions {
         login_page.loginButton.click();
     }
     @When("user clicks More Button")
-    public void userClicks() throws InterruptedException {
-        Thread.sleep(5000);
+    public void userClicks() {
+        //Thread.sleep(5000);
         wait.until(ExpectedConditions.elementToBeClickable(vehiclesFuelLogs_page.more_Button));
         vehiclesFuelLogs_page.more_Button.click();
     }
@@ -88,19 +88,20 @@ public class Verifications_StepDefinitions {
 
     }
     @And("page title changes to the new Vehicle Fuel Logs value")
-    public void pageTitleChangesToTheNewVehicleFuelLogsValue() throws InterruptedException {
-        Thread.sleep(5000);
+    public void pageTitleChangesToTheNewVehicleFuelLogsValue(){
+        //Thread.sleep(5000);
         wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         String selectedVehicle = vehiclesFuelLogs_page.vehicle_Field.getText();
-        Thread.sleep(3000);
+        //Thread.sleep(3000);
+        wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         System.out.println("selectedVehicle = " + selectedVehicle);
-         Thread.sleep(3000);
+         //Thread.sleep(3000);
         wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         String actualTitle = Driver.getDriver().getTitle();
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
         wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         System.out.println("actualTitle = " + actualTitle);
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
         Assert.assertTrue(actualTitle.contains(selectedVehicle));
 
     }
@@ -111,7 +112,7 @@ public class Verifications_StepDefinitions {
          //Thread.sleep(3000);
         wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
     }
-    @Then("user makes sure his Fuel Logs is NOT created by verifying page title stayed the same:")
+    @Then("user makes sure his Fuel Logs is NOT created by verifying page title stayed the same")
     public void userMakesSureHisFuelLogsIsNOTCreatedByVerifyingPageTitleStayedTheSame()  {
         String expectedTitle="New - Odoo";
         String actualTitle=Driver.getDriver().getTitle();
@@ -226,6 +227,7 @@ public class Verifications_StepDefinitions {
     }
     @And("user enters Purchaser {string}")
     public void userEntersPurchaserPurchaser(String string)  {
+        wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         vehiclesFuelLogs_page.purchaser_Field.click();
         //Thread.sleep(1000);
         wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
@@ -239,6 +241,7 @@ public class Verifications_StepDefinitions {
     }
     @And("user enters Invoice Reference {string}")
     public void userEntersInvoiceReference(String string)  {
+        wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         vehiclesFuelLogs_page.invoiceReference_Field.click();
          //Thread.sleep(3000);
         wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
@@ -246,6 +249,7 @@ public class Verifications_StepDefinitions {
     }
     @And("user enters Vendor {string}")
     public void userEntersVendor(String string)  {
+        wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         vehiclesFuelLogs_page.vendor_Field.click();
         //Thread.sleep(1000);
         wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
@@ -265,11 +269,11 @@ public class Verifications_StepDefinitions {
         vehiclesFuelLogs_page.notes_Fieldd.sendKeys(string);
     }
     @And("user sees the {string} on the page")
-    public void userSeesTheOnThePage(String expected) throws InterruptedException {
-        Thread.sleep(3000);
+    public void userSeesTheOnThePage(String expected)  {
+        //Thread.sleep(3000);
         wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         String actual=vehiclesFuelLogs_page.vehicle_Tittle.getText();
-        Thread.sleep(3000);
+        //Thread.sleep(3000);
         wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         assertEquals(expected, actual);
     }
@@ -286,7 +290,9 @@ public class Verifications_StepDefinitions {
     }
     @When("user adds vehicle {string}")
     public void user_adds_vehicle(String string)  {
+        wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         vehiclesFuelLogs_page.addCustom_Filter.click();
+        wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         vehiclesFuelLogs_page.filter_Dropdown1.click();
          //Thread.sleep(3000);
         wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
@@ -306,6 +312,7 @@ public class Verifications_StepDefinitions {
          //Thread.sleep(3000);
         wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         vehiclesFuelLogs_page.filter_Input.sendKeys(string);
+        wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         vehiclesFuelLogs_page.apply.click();
 
 
@@ -352,6 +359,7 @@ public class Verifications_StepDefinitions {
      */
     @When("user adds Liter {double}")
     public void user_adds_liter(Double double1)  {
+        wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         vehiclesFuelLogs_page.addCustom_Filter.click();
          //Thread.sleep(3000);
         wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
@@ -383,6 +391,7 @@ public class Verifications_StepDefinitions {
     }
     @When("user adds Price Per Liter {double}")
     public void user_adds_price_per_liter(Double double1)  {
+        wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         vehiclesFuelLogs_page.addCustom_Filter.click();
          //Thread.sleep(3000);
         wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
@@ -414,6 +423,7 @@ public class Verifications_StepDefinitions {
     }
     @When("user adds Total Price {double}")
     public void user_adds_total_price(Double double1)  {
+        wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         vehiclesFuelLogs_page.addCustom_Filter.click();
          //Thread.sleep(3000);
         wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
@@ -443,6 +453,7 @@ public class Verifications_StepDefinitions {
     }
     @When("user adds Date {string}")
     public void user_adds_date(String string)  {
+        wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         vehiclesFuelLogs_page.addCustom_Filter.click();
          //Thread.sleep(3000);
         wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
@@ -469,6 +480,7 @@ public class Verifications_StepDefinitions {
     }
     @When("user adds Purchaser {string}")
     public void user_adds_purchaser(String string) throws InterruptedException {
+        wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         vehiclesFuelLogs_page.addCustom_Filter.click();
          //Thread.sleep(3000);
         wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
@@ -485,16 +497,18 @@ public class Verifications_StepDefinitions {
          //Thread.sleep(3000);
         wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         vehiclesFuelLogs_page.addCustom_Filter.click();
-         Thread.sleep(3000);
-        //wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
+         //Thread.sleep(3000);
+        wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         vehiclesFuelLogs_page.filter_Input.click();
          //Thread.sleep(3000);
         wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         vehiclesFuelLogs_page.filter_Input.sendKeys(string);
+        wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         vehiclesFuelLogs_page.apply.click();
     }
     @When("user adds Invoice Reference {string}")
     public void user_adds_invoice_reference(String string)  {
+        wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         vehiclesFuelLogs_page.addCustom_Filter.click();
          //Thread.sleep(3000);
         wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
@@ -549,27 +563,41 @@ public class Verifications_StepDefinitions {
     @When("user adds Notes {string}")
     public void user_adds_notes(String string) throws InterruptedException {
         vehiclesFuelLogs_page.addCustom_Filter.click();
-         Thread.sleep(3000);
+         //Thread.sleep(3000);
         wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         vehiclesFuelLogs_page.filter_Dropdown1.click();
-         Thread.sleep(3000);
+         //Thread.sleep(3000);
         wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         vehiclesFuelLogs_page.filter_Dropdown1.sendKeys("Notes");
-         Thread.sleep(3000);
+         //Thread.sleep(3000);
         wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         vehiclesFuelLogs_page.filters.click();
-         Thread.sleep(3000);
+         //Thread.sleep(3000);
         wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         vehiclesFuelLogs_page.filters.click();
         vehiclesFuelLogs_page.addCustom_Filter.click();
         wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
+        /*
+         WebElement parentElement=Driver.getDriver().findElement(By.xpath("//input[@class='o_input']"));
+        Actions actions=new Actions(Driver.getDriver());
+        actions.moveToElement(parentElement).perform();
+        WebElement hiddenLink=Driver.getDriver().findElement(By.xpath("//input[@class='o_input']"));
+        hiddenLink.click();
+
+ WebElement parentElement1=Driver.getDriver().findElement(By.xpath("//button[@class='btn btn-primary btn-sm o_apply_filter']"));
+        Actions actions1=new Actions(Driver.getDriver());
+        actions1.moveToElement(parentElement1).perform();
+        WebElement hiddenLink1=Driver.getDriver().findElement(By.xpath("//button[@class='btn btn-primary btn-sm o_apply_filter']"));
+        hiddenLink1.click();
+         */
         WebElement element = Driver.getDriver().findElement(By.xpath("//input[@class='o_input']"));
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
-        Thread.sleep(500);
+        //Thread.sleep(500);
+        wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         vehiclesFuelLogs_page.filter_Input.click();
         wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         vehiclesFuelLogs_page.filter_Input.sendKeys(string);
-        Thread.sleep(3000);
+        //Thread.sleep(3000);
         wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         vehiclesFuelLogs_page.apply.click();
 
@@ -577,6 +605,7 @@ public class Verifications_StepDefinitions {
     }
     @When("user clicks Advanced Search... button")
     public void user_clicks_advanced_search_button() {
+        wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         vehiclesFuelLogs_page.advanced_Search.click();
     }
     @Then("user sees the {string} Fuel Logs value.")
@@ -627,8 +656,8 @@ public class Verifications_StepDefinitions {
     @Then("user sees changed Fuel Logs display to Graph")
     public void user_sees_changed_fuel_logs_display_to_graph() throws InterruptedException {
         String actual=Driver.getDriver().getCurrentUrl();
-         Thread.sleep(3000);
-        //wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
+         //Thread.sleep(3000);
+        wait.until(ExpectedConditions.invisibilityOf(vehiclesFuelLogs_page.loading_Bar));
         String expected="https://qa.centrilli.com/web?#view_type=graph&model=fleet.vehicle.log.fuel&menu_id=147&action=164";
         assertEquals(expected,actual);
     }

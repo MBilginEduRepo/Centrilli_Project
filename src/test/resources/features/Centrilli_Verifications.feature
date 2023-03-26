@@ -1,4 +1,4 @@
-@US_27
+  @CENTRIL10-438 @wip
 Feature: User work on the Fleet Module
   User Story:
     1. Verify that user can create a Vehicle Fuel Logs
@@ -21,25 +21,25 @@ Feature: User work on the Fleet Module
     And user clicks More Button
     And user clicks Fleet Module
     Then user clicks Vehicles Fuel Logs Module
-
+      @CENTRIL10-428
     Scenario: Verify that user can create a Vehicle Fuel Logs
       When user clicks Create Button
       And user choose Vehicle
       And user clicks Save Button
       And page title changes to the new Vehicle Fuel Logs value
-
+      @CENTRIL10-429
     Scenario: Verify that user cannot create a Vehicle Fuel Logs without selecting vehicle
       When user clicks Create Button
       And user clicks Save Button
       And user receives a warning popup message, means that he is unable to create a vehicle.
-      Then user makes sure his Fuel Logs is NOT created by verifying page title stayed the same:
-
+      Then user makes sure his Fuel Logs is NOT created by verifying page title stayed the same
+      @CENTRIL10-430
     Scenario: Positive scenario:
               Verify that user can cancel creating by clicking Discard button
       When user clicks Create Button
       And user clicks to Discard button
       Then user makes sure his Fuel Logs is discarded by landing on the Vehicles Fuel Logs page
-
+      @CENTRIL10-431
     Scenario:Negative scenario 1:
               Verify that user can cancel creating by clicking Discard button
       When user clicks Create Button
@@ -48,19 +48,19 @@ Feature: User work on the Fleet Module
       And user sees this warning message "The record has been modified, your changes will be discarded. Do you want to proceed?"
       And user clicks Ok button
       Then user sees the "Vehicles Fuel Logs" page
-
+      @CENTRIL10-432
     Scenario: Verify that page title is changed to the new Vehicle Fuel Logs value after user create the Vehicle Fuel Logs
       When user clicks Create Button
       And user choose Vehicle
       And user clicks Save Button
       And page title changes to the new Vehicle Fuel Logs value
-
+      @CENTRIL10-433
     Scenario: Verify that “Attachment” and Action buttons are displayed at the top of the page (after creating a new Vehicle Fuel Logs).
       When user clicks Create Button
       And user choose Vehicle
       And user clicks Save Button
       Then “Attachment” and Action buttons are displayed at the top of the page
-
+      @CENTRIL10-434
     Scenario Outline: Verify that user can find the new created Vehicle Fuel Logs value under Vehicle Fuel Logs list by using search box.
       When user clicks Create Button
       And user enters vehicle "<Vehicle>"
@@ -94,7 +94,7 @@ Feature: User work on the Fleet Module
         | Vehicle  | Odometer Value | Liter | Price Per Liter | Total Price | Date       | Purchaser | Invoice Reference | Vendor | Notes                   | new created |
         | Audi/A1/ | 2.00           | 200   | 2.0             | 400         | 03/24/2023 | Roksi     | Yavuz Limited     | Yalcin | Thanks you for services | Audi/A1/    |
 
-
+      @CENTRIL10-435
     Scenario: Verify that user can change Vehicle Fuel Logs page display to Kanban / List / Graph
       When users clicks List buttons
       And user sees changed Fuel Logs display to List
@@ -102,17 +102,17 @@ Feature: User work on the Fleet Module
       And user sees changed Fuel Logs display to Kanban
       And users clicks Graph buttons
       Then user sees changed Fuel Logs display to Graph
-
+      @CENTRIL10-436
     Scenario: Verify that user can change Vehicle Fuel Logs page number by right and left arrow, up right corner of screen.
       When user clicks right arrow and sees the page number of the page has changed
       And user clicks left arrow and sees the page number of the page has changed
-  @wip
-  Scenario: Verify that the number of Vehicle Fuel logs increased 1
-    When I count the number of Vehicle Fuel logs
-    And user clicks Create Button
-    And user choose Vehicle
-    And user clicks Save Button
-    Then the number of Vehicle Fuel logs should increase by 1
+      @CENTRIL10-437
+    Scenario: Verify that the number of Vehicle Fuel logs increased 1
+      When I count the number of Vehicle Fuel logs
+      And user clicks Create Button
+      And user choose Vehicle
+      And user clicks Save Button
+      Then the number of Vehicle Fuel logs should increase by 1
 
 
 
